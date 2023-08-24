@@ -1,62 +1,73 @@
 package com.slukovskyi.tradertracker.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.slukovskyi.tradertracker.models.enums.*;
 import lombok.Data;
 
 @Data
 public class Order {
 
     @JsonProperty("avgPrice")
-    private String averagePrice;
+    private Double averagePrice;
 
+    @JsonProperty("clientOrderId")
     private String clientOrderId;
 
     @JsonProperty("cumQuote")
-    private String cumulativeQuoteQuantity;
+    private Double cumulativeQuoteQuantity;
 
     @JsonProperty("executedQty")
-    private String executedQuantity;
+    private Double executedQuantity;
 
+    @JsonProperty("orderId")
     private Long orderId;
 
     @JsonProperty("origQty")
-    private String originalQuantity;
+    private Double originalQuantity;
 
-    @JsonProperty("origType")
-    private String originalType;
+    @JsonProperty("price")
+    private Double price;
 
-    private String price;
-
+    @JsonProperty("reduceOnly")
     private Boolean reduceOnly;
 
-    private String side;
+    @JsonProperty("side")
+    private OrderSide side;
 
-    private String positionSide;
+    @JsonProperty("positionSide")
+    private PositionSide positionSide;
 
-    private String status;
+    @JsonProperty("status")
+    private OrderStatus status;
 
-    private String stopPrice;
+    @JsonProperty("stopPrice")
+    private Double stopPrice;
 
+    @JsonProperty("closePosition")
     private Boolean closePosition;
 
+    @JsonProperty("symbol")
     private String symbol;
 
     @JsonProperty("time")
     private Long orderTime;
 
-    private String timeInForce;
-
-    private String type;
+    @JsonProperty("type")
+    private OrderType type;
 
     @JsonProperty("activatePrice")
-    private String activationPrice;
+    private Double activationPrice;
 
-    private String priceRate;
+    @JsonProperty("priceRate")
+    private Double priceRate;
 
+    @JsonProperty("updateTime")
     private Long updateTime;
 
-    private String workingType;
+    @JsonProperty("workingType")
+    private OrderWorkingType workingType;
 
+    @JsonProperty("priceProtect")
     private Boolean priceProtect;
 
 }

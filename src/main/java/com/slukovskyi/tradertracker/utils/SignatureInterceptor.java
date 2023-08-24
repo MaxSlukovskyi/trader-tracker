@@ -3,12 +3,15 @@ package com.slukovskyi.tradertracker.utils;
 import com.slukovskyi.tradertracker.config.ApplicationProperties;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
+
 public class SignatureInterceptor implements RequestInterceptor {
 
     protected final ApplicationProperties.BinanceApi binanceApi;
+
+    public SignatureInterceptor(ApplicationProperties.BinanceApi binanceApi) {
+        this.binanceApi = binanceApi;
+    }
 
     @Override
     public void apply(RequestTemplate template) {
