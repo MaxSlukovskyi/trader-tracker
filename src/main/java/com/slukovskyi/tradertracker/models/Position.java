@@ -7,43 +7,37 @@ import lombok.Data;
 @Data
 public class Position {
 
-    @JsonProperty("symbol")
-    private String symbol;
+    @JsonProperty("entryPrice")
+    private Double entryPrice;
 
-    @JsonProperty("initialMargin")
-    private Double initialMargin;
+    @JsonProperty("marginType")
+    private String marginType;
 
-    @JsonProperty("maintMargin")
-    private Double maintenanceMargin;
-
-    @JsonProperty("unrealizedProfit")
-    private Double unrealizedProfit;
-
-    @JsonProperty("positionInitialMargin")
-    private Double positionInitialMargin;
-
-    @JsonProperty("openOrderInitialMargin")
-    private Double openOrderInitialMargin;
+    @JsonProperty("isolatedMargin")
+    private Double isolatedMargin;
 
     @JsonProperty("leverage")
     private Integer leverage;
 
-    @JsonProperty("isolated")
-    private Boolean isolated;
+    @JsonProperty("liquidationPrice")
+    private Double liquidationPrice;
 
-    @JsonProperty("entryPrice")
-    private Double entryPrice;
+    @JsonProperty("markPrice")
+    private Double markPrice;
 
-    @JsonProperty("maximumNotional")
-    private Integer maximumNotional;
-
-    @JsonProperty("positionSide")
-    private PositionSide positionSide;
+    @JsonProperty("maxNotionalValue")
+    private Integer maximumNotionalValue;
 
     @JsonProperty("positionAmt")
     private Double positionAmount;
 
-    @JsonProperty("lastUpdateTime")
-    private Long lastUpdateTime;
+    @JsonProperty("symbol")
+    private String symbol;
+
+    @JsonProperty("unRealizedProfit")
+    private Double unrealizedProfit;
+
+    @JsonProperty("positionSide")
+    private PositionSide positionSide;
 
 }

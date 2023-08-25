@@ -44,7 +44,5 @@ public class AccountInformation {
     @JsonProperty("assets")
     private List<Asset> assets;
 
-    @JsonProperty("positions")
-    private List<Position> positions;
 
 }

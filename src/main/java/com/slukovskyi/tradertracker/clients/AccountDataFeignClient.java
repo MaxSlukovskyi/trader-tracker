@@ -3,6 +3,7 @@ package com.slukovskyi.tradertracker.clients;
 import com.slukovskyi.tradertracker.config.SignedEndpointFeignConfiguration;
 import com.slukovskyi.tradertracker.models.AccountInformation;
 import com.slukovskyi.tradertracker.models.Order;
+import com.slukovskyi.tradertracker.models.Position;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,4 +18,7 @@ public interface AccountDataFeignClient {
 
     @GetMapping(value = "/fapi/v2/account")
     AccountInformation account(@RequestParam("timestamp") Long timestamp);
+
+    @GetMapping(value = "/fapi/v2/positionRisk")
+    List<Position> position(@RequestParam(value = "symbol", required = false) String symbol, @RequestParam("timestamp") Long timestamp);
 }
